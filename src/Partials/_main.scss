@@ -1,0 +1,43 @@
+main {
+  background-color: #1E2D3B;
+  min-height: 95vh;
+
+  .container-select{
+    text-align: center;
+    padding-top: 25px;
+  }
+  .container-select label{
+    color: white;
+    margin-right: 5px;
+  }
+  .container-album{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 90%;
+    margin: auto;
+    padding-top: 15px;
+  }
+  .card-album{
+    width: 150px;
+    min-height: 313px;
+    background-color: #2E3A46;
+    margin: 15px;
+    text-align: center;
+  }
+  
+  .card-album img{
+    width: 80%;
+    padding: 10px 0px;
+  }
+  .card-album h3{
+    color: white;
+    width: 80%;
+    margin: auto;
+    text-transform: uppercase;
+  }
+  .card-album h5{
+    color: grey;
+    padding: 10px 0px;
+  }
+}

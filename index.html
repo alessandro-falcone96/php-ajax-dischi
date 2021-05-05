@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <!-- Fontawesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap" rel="stylesheet">
+    <!-- Css -->
+    <link rel="stylesheet" href="dist/app.css">
+    <!-- Title -->
+    <title>Vue Dischi</title>
+  </head>
+  <body>
+
+    <header>
+      <img src="logo.png" alt="">
+    </header>
+
+    <main>
+
+      <div id="app">
+
+        <div class="container-select">
+
+          <label for="generi">Scegli un genere:</label>
+          <select class="generi" name="generi" v-model="selectedGenre">
+            <option v-for="genere in generi" :value="genere">{{genere}}</option>
+          </select>
+
+        </div>
+
+        <div class="container-album">
+
+          <div v-for="disco in oggetti">
+
+            <div class="card-album" v-if="disco.genre == selectedGenre">
+
+              <img :src="disco.poster" alt="">
+              <h3>{{disco.title}}</h3>
+              <h5>{{disco.author}} <br> {{disco.year}}</h5>
+
+            </div>
+
+            <div class="card-album" v-if="selectedGenre == generi[0]">
+
+              <img :src="disco.poster" alt="">
+              <h3>{{disco.title}}</h3>
+              <h5>{{disco.author}} <br> {{disco.year}}</h5>
+
+            </div>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+    </main>
+
+    <!-- Vue (Development Version) -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <!-- Axios -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js" integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ==" crossorigin="anonymous"></script>
+    <!-- Js -->
+    <script src="js/script.js" charset="utf-8"></script>
+  </body>
+</html>
